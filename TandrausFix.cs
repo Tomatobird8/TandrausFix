@@ -1,5 +1,6 @@
 using BepInEx;
 using BepInEx.Logging;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace TandrausFix
@@ -32,6 +33,8 @@ namespace TandrausFix
             {
                 art.audioChanges = [];
             }
+            Transform t = scene.GetRootGameObjects()[54].transform.Find("ItemShipAnimContainer").Find("ItemShip").Find("ItemSpawnPositions").Find("DropshipSpawn (3)");
+            t.position += new Vector3(0f, 1f, 0f);
         }
     }
 }
